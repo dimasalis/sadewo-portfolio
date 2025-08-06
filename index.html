@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadewo | Front-End Developer</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1 class="glow">Sadewo <span>Portofolio</span></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+          </li>
+          <li>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" id="modeToggle">🌙 Mode</button>
+    </header>
+
+    <!-- Efek Domain Expansion -->
+    <div class="domain-expansion"></div>
+
+    <main>
+      <!-- Home -->
+      <section id="home" class="home scroll-fade">
+        <div class="home-content">
+          <h2>Hello, I'm <span class="highlight">Dimas Ali Sadewo</span></h2>
+          <!-- Foto dengan efek Gojo -->
+          <div class="photo-wrapper">
+            <img
+              src="sadewo.jpg"
+              alt="Foto Sadewo"
+              class="profile-photo"
+              onerror="this.src='sadewo.jpg';"
+            />
+            <div class="gojo-aura"></div>
+          </div>
+
+          <p class="role"><span id="typing"></span></p>
+          <p>
+            Welcome to my portfolio website! I am a passionate Front-End
+            Developer with a strong background in Information Systems. I enjoy
+            creating modern, responsive, and user-friendly websites.
+          </p>
+
+          <!-- Skills Ringkas -->
+          <div class="skills-summary">
+            <h3><i class="fas fa-code"></i> Skills</h3>
+            <p>
+              <i class="fab fa-python"></i>
+              <strong>Programming:</strong> Python, JavaScript, HTML, CSS, PHP
+            </p>
+            <p>
+              <i class="fas fa-tools"></i> <strong>Tools:</strong> GitHub,
+              Figma, VS Code, Postman, Canva, phpMyAdmin
+            </p>
+            <p>
+              <i class="fas fa-layer-group"></i>
+              <strong>Frameworks:</strong> React, Bootstrap
+            </p>
+            <p>
+              <i class="fas fa-users"></i> <strong>Soft Skills:</strong> Problem
+              Solving, Teamwork
+            </p>
+          </div>
+
+          <!-- Quote Gojo -->
+          <blockquote>
+            “Dibalik kekuatan ada tanggung jawab.”<br />
+            <span class="tagline">
+              Portfolio website inspired by Gojo Satoru
+            </span>
+          </blockquote>
+          <!-- CTA -->
+          <a href="#projects" class="cta-btn">View My Projects</a>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="scroll-fade">
+        <h2><i class="fas fa-briefcase"></i> Projects</h2>
+        <div class="card">
+          <h3><i class="fas fa-train"></i> Website KAI</h3>
+          <p>Developed with HTML, CSS, JavaScript, and MySQL for PT KAI.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-store"></i> E-Commerce Bengkel</h3>
+          <p>An application for Dyki Motor Workshop to expand digital reach.</p>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="scroll-fade">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <p>
+          I am a Diploma graduate in Information Systems from Universitas Bina
+          Sarana Informatika, passionate about building innovative digital
+          solutions. I have hands-on experience through an internship at PT KAI
+          in Web Development, as well as projects in e-commerce and IT support.
+          With solid skills in Front-End Development, Data Analysis, and Network
+          Engineering, I am eager to contribute to dynamic teams, solve problems
+          creatively, and continuously grow in the IT industry.
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="scroll-fade">
+        <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <p>
+          <i class="fas fa-at"></i> Email:
+          <a href="mailto:dimasalisadewo911@gmail.com"
+            >dimasalisadewo911@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i> LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/dimas-ali-sadewo-234168337"
+            target="_blank"
+            >Visit Profile</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github"></i> GitHub:
+          <a href="https://github.com/dimasalis" target="_blank"
+            >View Repositories</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Sadewo | Satoru Concept</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      // Kursor Gojo
+      const cursor = document.createElement("div");
+      cursor.classList.add("cursor-satoru");
+      document.body.appendChild(cursor);
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.top = e.clientY + "px";
+        particle.style.left = e.clientX + "px";
+        document.body.appendChild(particle);
+
+        setTimeout(() => particle.remove(), 1000);
+      });
+
+      document.addEventListener("click", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
+        cursor.style.boxShadow =
+          "0 0 40px rgba(0,198,255,1), 0 0 70px rgba(0,198,255,0.8)";
+        setTimeout(() => {
+          cursor.style.transform = "translate(-50%, -50%) scale(1)";
+          cursor.style.boxShadow =
+            "0 0 20px rgba(0,198,255,0.8), 0 0 40px rgba(0,198,255,0.6)";
+        }, 200);
+      });
+
+      // Scroll Fade-in
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".scroll-fade");
+        function checkScroll() {
+          const triggerBottom = window.innerHeight * 0.85;
+          elements.forEach((el) => {
+            if (el.getBoundingClientRect().top < triggerBottom) {
+              el.classList.add("visible");
+            }
+          });
+        }
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+      });
+
+      // Typing Effect
+      const roles = ["Front-End Developer", "Data Analyst", "Network Engineer"];
+      let i = 0,
+        j = 0,
+        isDeleting = false;
+      function typeEffect() {
+        let currentRole = roles[i];
+        document.getElementById("typing").innerHTML = isDeleting
+          ? currentRole.substring(0, j--)
+          : currentRole.substring(0, j++);
+        let speed = isDeleting ? 80 : 120;
+        if (!isDeleting && j === currentRole.length + 1) {
+          isDeleting = true;
+          speed = 1000;
+        } else if (isDeleting && j < 0) {
+          isDeleting = false;
+          i = (i + 1) % roles.length;
+          speed = 500;
+        }
+        setTimeout(typeEffect, speed);
+      }
+      window.onload = typeEffect;
+
+      // Mode Toggle
+      const toggleBtn = document.getElementById("modeToggle");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        toggleBtn.textContent = document.body.classList.contains("light-mode")
+          ? "🌞 Mode"
+          : "🌙 Mode";
+      });
+    </script>
+  </body>
+</html>
